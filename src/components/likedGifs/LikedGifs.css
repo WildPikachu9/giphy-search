@@ -1,0 +1,8 @@
+.liked-gifs-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(96, 94, 94);
+}

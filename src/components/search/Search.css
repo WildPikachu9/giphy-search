@@ -1,0 +1,12 @@
+.search-container {
+    margin-top: 40px;
+}
+.search-container .search-input {
+    padding: 10px 20px;
+}
+.search-container .search-button {
+    padding: 10px 20px;
+    border-color: transparent;
+    background-color: rgb(103, 177, 237);
+    color: #fff;
+}

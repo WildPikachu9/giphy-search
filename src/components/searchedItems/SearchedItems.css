@@ -1,0 +1,6 @@
+.searched-items-container {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
