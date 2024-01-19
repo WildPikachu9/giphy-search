@@ -11,8 +11,15 @@
     background-color: transparent;
 }
 
+.gif-item-container .liked-button svg {
+    height: 20px;
+}
+.gif-item-container .liked-button svg:hover {
+    color: red;
+}
+
 .gif-item-container .gif-item {
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 250px;
     border-radius: 10px;
 }

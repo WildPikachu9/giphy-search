@@ -12,7 +12,6 @@ export const LikedGifs = ({ likedGifs, setLikedGifs }) => {
 
     return (
         <div className='liked-gifs-container'>
-            <h2>Favourite GIFs</h2>
             {likedGifs.map((likedGif, id) => (
                 <GifItem
                     key={id}

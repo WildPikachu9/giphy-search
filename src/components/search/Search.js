@@ -3,12 +3,12 @@ import './Search.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-export const Search = ({ setSearchedGif }) => {
-
+export const Search = ({ setSearchedGif, setIsLoading }) => {
     const [inputValue, setInputValue] = useState('');
 
     const searchedGifList = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         const apiKey = 'HqAvKVtqkWGQusQ4RQzCOoRoaMsDjG3O';
 
         fetch(`http://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${inputValue}`)
@@ -17,9 +17,11 @@ export const Search = ({ setSearchedGif }) => {
             const gifData = data.data;
             setSearchedGif(gifData);
             setInputValue('');
+            setIsLoading(false);
         })
         .catch(error => {
             console.error('Error fetching GIFs:', error);
+            setIsLoading(false);
         })
     };
 

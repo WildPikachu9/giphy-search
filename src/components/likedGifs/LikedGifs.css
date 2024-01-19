@@ -1,8 +1,11 @@
 .liked-gifs-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     position: fixed;
     bottom: 0;
+    overflow-y: scroll;
     width: 100%;
+    height: 280px;
     background-color: rgb(96, 94, 94);
 }
