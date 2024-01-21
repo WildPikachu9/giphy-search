@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SearchedItems.css';
 import { GifItem } from '../gifItem/GifItem';
-import InfiniteScroll from 'react-infinite-scroller';
+import { Loader } from '../loader/Loader';
 
-export const SearchedItems = ({ searchedGif, likedGifs, setLikedGifs }) => {
-    const [displayedItems, setDisplayedItems] = useState(10);
-
-    const fetchMoreData = () =>{
-        setDisplayedItems(prev => prev + 10);
-    };
+export const SearchedItems = ({ searchedGif, likedGifs, setLikedGifs, isLoading }) => {
 
     return ( 
         <div className='searched-items-container'>
-            <InfiniteScroll
+            <div
                 className='searched-items'
-                loadMore={fetchMoreData}
-                hasMore={displayedItems < searchedGif.length}
             >
-                {searchedGif.slice(0, displayedItems).map((gif, index) => (
+                {searchedGif.map((gif, index) => (
                     <GifItem 
                         key={index} 
                         gifData={gif}
@@ -25,7 +18,8 @@ export const SearchedItems = ({ searchedGif, likedGifs, setLikedGifs }) => {
                         setLikedGifs={setLikedGifs}
                     />
                 ))}
-            </InfiniteScroll>
+            </div>
+            {isLoading ? <Loader /> : null}
         </div>
     )
 };

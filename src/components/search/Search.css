@@ -1,5 +1,9 @@
 .search-container {
-    margin-top: 40px;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 .search-container .search-input {
     padding: 10px 20px;
@@ -9,4 +13,5 @@
     border-color: transparent;
     background-color: rgb(103, 177, 237);
     color: #fff;
+    cursor: pointer;
 }

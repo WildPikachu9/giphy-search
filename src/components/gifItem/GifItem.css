@@ -9,6 +9,8 @@
     right: 0;
     border: transparent;
     background-color: transparent;
+    cursor: pointer;
+    transition: all .3s;
 }
 
 .gif-item-container .liked-button svg {

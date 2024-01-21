@@ -1,6 +1,8 @@
 .searched-items-container {
-    margin: 20px auto;
+    margin: 120px auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 80%;
 }
 .searched-items-container .searched-items {

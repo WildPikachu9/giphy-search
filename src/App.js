@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { LikedGifs } from './components/likedGifs/LikedGifs';
 import { Search } from './components/search/Search';
 import { SearchedItems } from './components/searchedItems/SearchedItems';
-import { Loader } from './components/loader/Loader';
 
 function App() {
   const [searchedGif, setSearchedGif] = useState([]);
@@ -13,11 +12,7 @@ function App() {
   return (
     <div className="App">
       <Search setSearchedGif={setSearchedGif} setIsLoading={setIsLoading} />
-      {isLoading ?
-        <Loader /> 
-        : 
-        <SearchedItems searchedGif={searchedGif} likedGifs={likedGifs} setLikedGifs={setLikedGifs} />
-      }
+      <SearchedItems searchedGif={searchedGif} likedGifs={likedGifs} setLikedGifs={setLikedGifs} isLoading={isLoading} />
       <LikedGifs likedGifs={likedGifs} setLikedGifs={setLikedGifs} />
     </div>
   );
